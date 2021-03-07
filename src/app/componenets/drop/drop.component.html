@@ -1,0 +1,20 @@
+<h1>Drag and Drop</h1>
+<hr class="mb-5">
+
+<ng-container *ngIf="paises.length > 0; else espere">
+
+  <ul class="list-group"
+        cdkDropList
+        (cdkDropListDropped)="drop($event)">
+    <li class="list-group-item"
+        *ngFor="let pais of paises"
+        cdkDrag >{{ pais.name }}</li>
+  </ul>
+
+</ng-container>
+
+<ng-template #espere>
+  <p>Espere por favor...</p>
+</ng-template>
+
+
